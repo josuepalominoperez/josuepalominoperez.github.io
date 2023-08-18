@@ -79,12 +79,30 @@
       background-color: #27ae60;
     }
   </style>
-  <title>Hola</title>
+  <title>Invitación Romántica</title>
 </head>
 <body>
   <div class="container">
-    <h1>Hola</h1>
+    <h1>¿Quieres ir a la fiesta conmigo?</h1>
+    <div class="buttons">
+      <button id="noButton">No</button>
+      <button id="yesButton">Sí</button>
+    </div>
   </div>
-  
+  <script>
+    document.getElementById('noButton').addEventListener('click', () => {
+      const noButton = document.getElementById('noButton');
+      noButton.classList.add('button-animation');
+      noButton.disabled = true;
+    });
+
+    document.getElementById('yesButton').addEventListener('click', () => {
+      const container = document.querySelector('.container');
+      container.innerHTML = `
+        <h1>¡Eres la luz de mi vida!</h1>
+        <p>¿Te gustaría acompañarme en la fiesta?</p>
+      `;
+    });
+  </script>
 </body>
 </html>
