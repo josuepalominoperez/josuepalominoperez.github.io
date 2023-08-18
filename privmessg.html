@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  text-align: center;
+  margin-top: 150px;
+}
+
+h1 {
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#mensaje {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+  </style>
+  <title>Mensaje Privado</title>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Hola! ¿Cuál es tu nombre?</h1>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    <button id="boton">Ver mensaje</button>
+    <p id="mensaje"></p>
+  </div>
+  <script>
+    document.getElementById("boton").addEventListener("click", function () {
+  var nombre = document.getElementById("nombre").value;
+  var mensaje = document.getElementById("mensaje");
+
+  if (nombre === "Mayra") {
+    mensaje.textContent = "¡Me gustas Mayra!";
+    mensaje.style.color = "#4CAF50";
+  } else {
+    mensaje.textContent = "Nombre incorrecto";
+    mensaje.style.color = "#FF5733";
+  }
+});
+  </script>
+</body>
+</html>
