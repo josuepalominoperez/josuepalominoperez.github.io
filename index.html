@@ -2,7 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Title</title>
+<link rel="icon" href="https://www.lineauno.pe/wp-content/uploads/2019/01/cropped-Favicon-Linea-1-1-1-32x32.png" sizes="32x32">
+<title>Sistema de Recarga de la Línea 1 del Metro de Lima</title>
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto:300,400');
@@ -10,6 +11,12 @@
 * {
 	box-sizing: border-box;
 }
+
+#desktopMessage {
+  color: white;
+}
+
+
 .apple-pay-button-container {
     text-align: center;
 }
@@ -99,7 +106,7 @@ body {
 	margin: 0;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	background-color: #ffcc66;
+	background-color: #81c784;
 }
 
 h2 {
@@ -480,6 +487,9 @@ h3 {
 </style>
 </head>
 <body>
+	
+	<div id="mobileContent">
+		
     <div class="wrapper">
       <div class="app-wrapper">
   
@@ -515,6 +525,12 @@ h3 {
         </div>
       </div>
     </div>
+	
+	</div>
+	<div id="desktopMessage">
+		<!-- Mensaje para mostrar en dispositivos de escritorio -->
+		<h1>Esta aplicación web sólo está disponible para dispositivos iOS con FaceID.</h1>
+	</div>
     <script>
         var cards = [
 	{
@@ -745,6 +761,20 @@ modalControl.addEventListener('click', function() {
 modal.addEventListener('click', function() {
 	document.querySelector('.modal').classList.remove('open');
 }, false);
+
+
+
+window.onload = function() {
+            var isiPhone = /iPhone/i.test(navigator.userAgent);
+			var isSafari = /Safari/i.test(navigator.userAgent);
+            var mobileContent = document.getElementById('mobileContent');
+            var desktopMessage = document.getElementById('desktopMessage');
+
+            if (!(isiPhone && isSafari)) {
+                mobileContent.style.display = 'none'; // Oculta el contenido para dispositivos móviles
+                desktopMessage.style.display = 'block'; // Muestra el mensaje para escritorio
+            }
+        };
     </script>
    
   
