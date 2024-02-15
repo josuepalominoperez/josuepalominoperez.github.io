@@ -766,7 +766,7 @@ modal.addEventListener('click', function() {
 
 window.onload = function() {
             var isiPhone = /iPhone/i.test(navigator.userAgent);
-			var isSafari = /Safari/i.test(navigator.userAgent);
+	    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
             var mobileContent = document.getElementById('mobileContent');
             var desktopMessage = document.getElementById('desktopMessage');
 
